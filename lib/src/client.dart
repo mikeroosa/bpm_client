@@ -7,9 +7,6 @@ import 'package:bpm_client/src/models/search_base_list.dart';
 import 'package:bpm_client/src/models/song.dart';
 import 'package:bpm_client/src/models/song_base_list.dart';
 import 'package:http/http.dart';
-//import 'models/artist_base.dart';
-// import 'models/bpm_list.dart';
-// import 'models/bpm_song.dart';
 
 /// This class is used to interact with the GetSongBPM API.
 class GetSongBPMClient {
