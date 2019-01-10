@@ -19,6 +19,7 @@ class GetSongBPMClient {
   /// If no client is provided, a default one is created.
   GetSongBPMClient(this.apiKey, {Client client}) : _client = client ?? Client();
 
+  /// song will get a song object from the API when the id is provided
   Future<Song> song(String id) async {
     final uri = baseUri.replace(
       path: '${baseUri.path}song/',
@@ -30,6 +31,7 @@ class GetSongBPMClient {
     return Song.fromJson(map['song']);
   }
 
+  /// artist will get an aritst object from the API when the id is provided
   Future<Artist> artist(String id) async {
     final uri = baseUri.replace(
       path: '${baseUri.path}artist/',
@@ -41,6 +43,7 @@ class GetSongBPMClient {
     return Artist.fromJson(map['artist']);
   }
 
+  /// songSearch will search the API for songs matching the provided song name
   Future<SongBaseList> songSearch(String songName) async {
     final uri = baseUri.replace(
       path: '${baseUri.path}search/',
@@ -55,6 +58,7 @@ class GetSongBPMClient {
     return SongBaseList.fromJson(songs['search']);
   }
 
+  /// aritstSearch will search the API for artists matching the provided artist name
   Future<ArtistBaseList> artistSearch(String artistName) async {
     final uri = baseUri.replace(
       path: '${baseUri.path}search/',
@@ -69,6 +73,7 @@ class GetSongBPMClient {
     return ArtistBaseList.fromJson(artists['search']);
   }
 
+  /// songAndArtistSearch will search the API for items that match both the provided song and artist
   Future<SearchBaseList> songAndArtistSearch(
       String songName, String artistName) async {
     final uri = baseUri.replace(
